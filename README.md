@@ -1,5 +1,5 @@
 # AstonHack2021
-Members: Abhinav Gupta, Govind Varma, Keane Moraes, Srijan Chaudhuri.
+Members: Avinash Gupta, Govind Varma, Keane Moraes, Srijan Chaudhuri.
 
 Software Used: Seashell.
 
