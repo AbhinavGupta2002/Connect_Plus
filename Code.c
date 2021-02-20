@@ -252,23 +252,36 @@ int connect_analysis(int width, int height, int length) {
 }
 
 int main (void) {
-  int width = 0;
-  int height = 0;
-  int length = 0;
-  printf("Enter Number Of Columns: ");
-  scanf("%d", &width);
-  printf("Enter Number Of Rows: ");
-  scanf("%d", &height);
-  printf("Enter Length: ");
-  scanf("%d", &length);
-  int flag = connect_analysis(width, height, length);
-  if (flag == -1) {
-    printf("You Chose an Invalid move\n");}
-  else if (flag < 0) {
-    printf("%c[0;34mCongrats Player 2!\n", 0x1b);
-  } else if (flag == 1) {
-    printf("It's a Tie");
-  } else if (flag > 0) {
-    printf("%c[0;31mCongrats Player 1!\n", 0x1b);
+  int wish = 1;
+  while(1) { 
+    int width = 0;
+    int height = 0;
+    int length = 0;
+    printf("Enter Number Of Columns: ");
+    scanf("%d", &width);
+    printf("Enter Number Of Rows: ");
+    scanf("%d", &height);
+    printf("Enter Length: ");
+    scanf("%d", &length);
+    int flag = connect_analysis(width, height, length);
+    if (flag == -1) {
+      printf("You Chose an Invalid move\n");}
+    else if (flag < 0) {
+      printf("%c[0;34mCongrats Player 2!\n", 0x1b);
+    } else if (flag == 1) {
+      printf("It's a Tie");
+    } else if (flag > 0) {
+      printf("%c[0;31mCongrats Player 1!\n", 0x1b);
+    }
+
+
+    printf("Do you wish to continue?\n");
+    printf("Enter 0 to continue or Enter 1 to exit: ");
+    scanf("%d", &wish);
+    if (wish != 0) {
+      exit(0);
+    }
   }
 }
+
+
