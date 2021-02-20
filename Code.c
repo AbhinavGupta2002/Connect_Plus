@@ -266,7 +266,7 @@ int main (void) {
   printf("%c[0;32mO\e[m", 0x1b);
   printf("%c[1;33m.\n\e[m", 0x1b);  
   printf("%c[1;33m              The values of the number of rows, number of columns and length must be greater than 2.\n\e[m", 0x1b);
-    printf("%c[1;33m              The value of length must be less than or equal to max(number of columns, number of rows).\n\n\e[m", 0x1b);
+  printf("%c[1;33m              The value of length must be less than or equal to max(number of columns, number of rows).\n\n\e[m", 0x1b);
   printf("Enter Number Of Columns: ");
   scanf("%d", &width);
   printf("Enter Number Of Rows: ");
