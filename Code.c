@@ -2,12 +2,10 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <stdio.h>
-/////////////////////////////////////////////////////////////////////////////
-// DO NOT MODIFY THESE CONSTANTS
-const int INVALID_GAME = -1;
+
 const int TIE = 1;
 const int MAX_BOARD_SIZE = 1024;
-/////////////////////////////////////////////////////////////////////////////
+
 // This module implements function to determine outcome of a connect game
 
 // clear() clears the console output and prints out two empty ines
@@ -207,7 +205,12 @@ int connect_analysis(int width, int height, int length) {
     scanf("%d", &col);
     --col;
     if (col < 0 || col >= width) {
-      return INVALID_GAME;
+        printf("Invalid Input. Try again\n");
+        continue;
+    } 
+    if (board[col] != 0) {
+        printf("Invalid Input. Try again\n");
+        continue;
     }
     for (int i = height-1 ; 0 <= i; i--) {
       clear();
@@ -262,9 +265,7 @@ int main (void) {
   printf("Enter Length: ");
   scanf("%d", &length);
   int flag = connect_analysis(width, height, length);
-  if (flag == -1) {
-    printf("You Chose an Invalid move\n");}
-  else if (flag < 0) {
+  if (flag < 0) {
     printf("%c[0;34mCongrats Player 2!\n", 0x1b);
   } else if (flag == 1) {
     printf("It's a Tie");
