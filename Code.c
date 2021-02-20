@@ -255,6 +255,15 @@ int main (void) {
   int width = 0;
   int height = 0;
   int length = 0;
+    printf("==================================================  ");
+  printf("CONNECT  ");
+  printf("+ ");
+  printf("==================================================\n\n");
+  printf("Instructions: In the game board, Player 1's moves are represented as ");
+  printf("X ");
+  printf("and Player 2's moves are represented as ");
+  printf("O.\n");
+  printf("              The value of length must be greater than 2.\n\n");
   printf("Enter Number Of Columns: ");
   scanf("%d", &width);
   printf("Enter Number Of Rows: ");
@@ -265,10 +274,12 @@ int main (void) {
   if (flag == -1) {
     printf("You Chose an Invalid move\n");}
   else if (flag < 0) {
+      printf("\n");
     printf("%c[0;34mCongrats Player 2!\n", 0x1b);
   } else if (flag == 1) {
     printf("It's a Tie");
   } else if (flag > 0) {
+      printf("\n");
     printf("%c[0;31mCongrats Player 1!\n", 0x1b);
   }
 }
