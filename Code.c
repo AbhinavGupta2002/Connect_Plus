@@ -278,11 +278,11 @@ int main (void) {
     printf("You Chose an Invalid move\n");}
   else if (flag < 0) {
       printf("\n");
-    printf("%c[0;32mCongrats Player 2!\n\e[m", 0x1b);
+    printf("%c[0;32mCongratulations Player 2!\n\e[m", 0x1b);
   } else if (flag == 1) {
     printf("It's a Tie");
   } else if (flag > 0) {
       printf("\n");
-    printf("%c[0;31mCongrats Player 1!\n\e[m", 0x1b);
+    printf("%c[0;31mCongratulations Player 1!\n\e[m", 0x1b);
   }
 }
