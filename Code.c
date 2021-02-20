@@ -14,23 +14,32 @@ const int MAX_BOARD_SIZE = 1024;
 //print_board(a, width, height) prints current board of the game
 void print_board(int a[], int width, int height) {
   int pos = 0;
-  for(int i = 0; i < height; i++) {
-    printf("|");
-    pos = i * width;
-    for(int j = 0; j < width; j++) {
-      if(a[pos + j] != 0) {
-        if(a[pos + j] == 1) {
-          printf("%c|", 'X');
-        } else {
-          printf("%c|", 'O');
-        }
-      } else {
-        printf(" |");
+  for (int i = 0; i < height; i++) {
+      printf("|");
+      pos = i * width;
+      for (int j = 0; j < width; j++) {
+          if (a[pos + j]!= 0) {
+              printf("| ");
+              if (a[pos + j] == 1) {
+                  printf("X");
+              } else if (a[pos + j] == 2){
+                  printf("O");
+              } else {
+                  printf(" ");
+              }
+              printf(" |");
+          } else {
+              printf("|   |");
+          }
+          
+          if(j == width - 1) {
+              printf("|");
+          }
       }
-    }
-    printf("\n");
-  }
+      printf("\n");
+  }    
 }
+
 
 // check_horizontal(a[], width, height, col, row, length, x) Checks if the 
 // player wins horizontally
