@@ -1,13 +1,4 @@
-/////////////////////////////////////////////////////////////////////////////
-// I received help from and/or collaborated with: 
-
-// None
-//  
-// Name: Srijan Chaudhuri
-// login ID: s54chaud
-///////////////////////////////////////////////////////////////////////////// 
 #include <stdbool.h>
-#include "trace-2d.h"
 #include <assert.h>
 #include <stdio.h>
 /////////////////////////////////////////////////////////////////////////////
@@ -18,6 +9,8 @@ const int MAX_BOARD_SIZE = 1024;
 /////////////////////////////////////////////////////////////////////////////
 // This module implements function to determine outcome of a connect game
 
+
+
 //print_board(a, widt, height) prints current board of the game
 void print_board(int a[], int width, int height) {
   int pos = 0;
@@ -26,7 +19,6 @@ void print_board(int a[], int width, int height) {
     pos = i * width;
     for(int j = 0; j < width; j++) {
       if(a[pos + j] != 0) {
-        //printf("%d|", a[pos + j]);
         if(a[pos + j] == 1) {
           printf("%c|", 'X');
         } else {
@@ -37,14 +29,12 @@ void print_board(int a[], int width, int height) {
       }
     }
     printf("\n");
-
   }
 }
 
 // check_horizontal(a[], width, height, col, row, length, x) Checks if the 
 // player wins horizontally
-bool check_horizontal(int a[], int width, int height, int col, int row,
-                      int length, int x) {
+bool check_horizontal(int a[], int width, int height, int col, int row, int length, int x) {
   int counter = 0;
   int curr_pos = col + (row * width);
   for(int i = col; i < width; i++) {
@@ -78,9 +68,8 @@ bool check_horizontal(int a[], int width, int height, int col, int row,
 
 // check_vertical(a[], width, height, col, row, length, x) Checks if the 
 // player wins vertically
-bool check_vertical(int a[], int width, int height, int col, int row,
-                    int length, int x) {
-  int counter = 0;
+bool check_vertical(int a[], int width, int height, int col, int row, int length, int x) {
+  int counter = 0; 
   for (int i = row; i < height; i++) {
     if (counter == length) {
       return true;
@@ -112,8 +101,7 @@ bool check_vertical(int a[], int width, int height, int col, int row,
 
 // check_diagonally(a[], width, height, col, row, length, x) Checks if the 
 // player wins diagonally
-bool check_diagonally(int a[], int width, int height, int col, int row, 
-                      int length, int x) {
+bool check_diagonally(int a[], int width, int height, int col, int row, int length, int x) {
   int counter = 0;
   for(int i = 0; i < (width - col); i++) {
     if(counter == length) {
@@ -173,7 +161,6 @@ bool check_diagonally(int a[], int width, int height, int col, int row,
   return false;
 }
 
-// see connect.h for details
 int connect_analysis(int width, int height, int length) {
   assert(width > 2);
   assert(height > 2);
