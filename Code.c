@@ -37,7 +37,7 @@ void print_board(int a[], int width, int height) {
 bool check_horizontal(int a[], int width, int height, int col, int row, int length, int x) {
   int counter = 0;
   int curr_pos = col + (row * width);
-  for(int i = col; i < width; i++) {
+  for(int i = col; i < width; i++) { // checking horizontally rightwards
     if(counter == length) {
       return true;
     } else if (a[curr_pos + (i - col)] == x) {
@@ -50,7 +50,7 @@ bool check_horizontal(int a[], int width, int height, int col, int row, int leng
   if (counter == length) {
     return true;
   }
-  for(int i = 1; i <= col; ++i) { 
+  for(int i = 1; i <= col; ++i) { // checking horizontally leftwards
     if(counter == length) {
       return true;
     } else if (a[curr_pos - i] == x) {
@@ -70,7 +70,7 @@ bool check_horizontal(int a[], int width, int height, int col, int row, int leng
 // player wins vertically
 bool check_vertical(int a[], int width, int height, int col, int row, int length, int x) {
   int counter = 0; 
-  for (int i = row; i < height; i++) {
+  for (int i = row; i < height; i++) { // checking vertically upwards
     if (counter == length) {
       return true;
     } else if (a[(i * width) + col] == x) {
@@ -83,7 +83,7 @@ bool check_vertical(int a[], int width, int height, int col, int row, int length
   if (counter == length) {
     return true;
   }
-  for (int i = row-1; i >= 0; i--) {
+  for (int i = row-1; i >= 0; i--) { // checking vertically downwards
     if (counter == length) {
       return true;
     } else if (a[(i * width) + col] == x) {
@@ -103,7 +103,7 @@ bool check_vertical(int a[], int width, int height, int col, int row, int length
 // player wins diagonally
 bool check_diagonally(int a[], int width, int height, int col, int row, int length, int x) {
   int counter = 0;
-  for(int i = 0; i < (width - col); i++) {
+  for(int i = 0; i < (width - col); i++) {  //checking downwards along left diagonal
     if(counter == length) {
       return true;
     } else if (row - i < 0){
@@ -115,7 +115,7 @@ bool check_diagonally(int a[], int width, int height, int col, int row, int leng
       break;
     }
   }
-  for(int i = 1; i <= col ; i++) {
+  for(int i = 1; i <= col ; i++) { //checking upwards along left diagonal
     if(counter == length) {
       return true;
     } else if (row + i >= height){
@@ -131,7 +131,7 @@ bool check_diagonally(int a[], int width, int height, int col, int row, int leng
     return true;
   }
   counter = 0;
-  for(int i = 0; i <= col; i++) {
+  for(int i = 0; i <= col; i++) { //checking downwards along right diagonal
     if(counter == length) {
       return true;
     } else if (row - i < 0){
@@ -143,7 +143,7 @@ bool check_diagonally(int a[], int width, int height, int col, int row, int leng
       break;
     }
   }
-  for(int i = 1; i < (width - col); i++) {
+  for(int i = 1; i < (width - col); i++) { //checking upwards along right diagonal
     if(counter == length) {
       return true;
     } else if (row + i >= height){
