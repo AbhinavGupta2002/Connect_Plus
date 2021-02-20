@@ -6,7 +6,7 @@ Project: CONNECT+
 
 Members: Abhinav Gupta, Govind Varma, Keane Moraes, Srijan Chaudhuri.
 
-Software Used: Sublime Text Editor, Visual Studio Code.
+Software Used: Sublime Text Editor, Visual Studio Code, Online C Compiler: https://www.onlinegdb.com.
 
 20th February, 2021 - 21st February, 2021.
 
