@@ -1,5 +1,6 @@
 #include <stdbool.h>
 #include <assert.h>
+#include <stdlib.h>
 #include <stdio.h>
 /////////////////////////////////////////////////////////////////////////////
 // DO NOT MODIFY THESE CONSTANTS
@@ -9,9 +10,19 @@ const int MAX_BOARD_SIZE = 1024;
 /////////////////////////////////////////////////////////////////////////////
 // This module implements function to determine outcome of a connect game
 
+// clear() clears the console output and prints out two empty ines
+void clear(){
+    #if defined(__linux__) || defined(__unix__) || defined(__APPLE__)
+        system("clear");
+    #endif
 
+    #if defined(_WIN32) || defined(_WIN64)
+        system("cls");
+    #endif
+        printf("\n\n");
+}
 
-//print_board(a, width, height) prints current board of the game
+// print_board(a, width, height) prints current board of the game
 void print_board(int a[], int width, int height) {
   int pos = 0;
   for(int i = 0; i < height; i++) {
@@ -190,6 +201,7 @@ int connect_analysis(int width, int height, int length) {
       return INVALID_GAME;
     }
     for (int i = height-1 ; 0 <= i; i--) {
+      clear();
       if(board[col + (i * width)] == 0) {
         board[col + (i * width)] = player;
         row = i;
