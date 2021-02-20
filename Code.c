@@ -10,7 +10,7 @@ const int MAX_BOARD_SIZE = 1024;
 /////////////////////////////////////////////////////////////////////////////
 // This module implements function to determine outcome of a connect game
 
-// clear() clears the console output and prints out two empty ines
+// clear() clears the console output and prints out two empty lines
 void clear(){
     #if defined(__linux__) || defined(__unix__) || defined(__APPLE__)
         system("clear");
@@ -26,25 +26,25 @@ void clear(){
 void print_board(int a[], int width, int height) {
   int pos = 0;
   for (int i = 0; i < height; i++) {
-      printf("|");
+      printf("%c[0;34m|", 0x1b);
       pos = i * width;
       for (int j = 0; j < width; j++) {
           if (a[pos + j]!= 0) {
-              printf("| ");
+              printf("%c[0;34m| ", 0x1b);
               if (a[pos + j] == 1) {
-                  printf("X");
+                  printf("%c[0;31mX", 0x1b);
               } else if (a[pos + j] == 2){
-                  printf("O");
+                  printf("%c[0;32mO", 0x1b);
               } else {
                   printf(" ");
               }
-              printf(" |");
+              printf("%c[0;34m |", 0x1b);
           } else {
-              printf("|   |");
+              printf("%c[0;34m|   |", 0x1b);
           }
           
           if(j == width - 1) {
-              printf("|");
+             printf("%c[0;34m|", 0x1b); 
           }
       }
       printf("\n");
