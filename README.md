@@ -1,6 +1,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/AbhinavGupta2002/AstonHack2021/main/LICENSE)
 
 # AstonHack2021 - CONNECT+
+
+Project: CONNECT+
+
 Members: Abhinav Gupta, Govind Varma, Keane Moraes, Srijan Chaudhuri.
 
 Software Used: Sublime Text Editor, Visual Studio Code.
