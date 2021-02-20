@@ -275,7 +275,7 @@ int main (void) {
   scanf("%d", &length);
   int flag = connect_analysis(width, height, length);
   if (flag == -1) {
-    printf("You Chose an Invalid move\n");}
+    printf("You Chose an Invalid Move\n");}
   else if (flag < 0) {
       printf("\n");
     printf("%c[0;32mCongratulations Player 2!\n\e[m", 0x1b);
