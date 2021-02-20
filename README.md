@@ -3,7 +3,7 @@
 # AstonHack2021
 Members: Abhinav Gupta, Govind Varma, Keane Moraes, Srijan Chaudhuri.
 
-Software Used: Seashell.
+Software Used: Sublime Text Editor, Visual Studio Code
 
 20th February, 2021 - 21st February, 2021.
 
