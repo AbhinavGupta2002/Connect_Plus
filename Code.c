@@ -255,6 +255,7 @@ int main (void) {
   int width = 0;
   int height = 0;
   int length = 0;
+  printf("Developed by Abhinav Gupta, Govind Varma, Keane Moraes, and Srijan Chaudhuri.\n\n");
   printf("%c[1;34m=================================================== ", 0x1b);
   printf("%c[0;32mCONNECT", 0x1b);
   printf("%c[0;31m+ ", 0x1b);
