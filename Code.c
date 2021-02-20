@@ -26,25 +26,25 @@ void clear(){
 void print_board(int a[], int width, int height) {
   int pos = 0;
   for (int i = 0; i < height; i++) {
-      printf("|");
+      printf("%c[0;34m|\e[m", 0x1b);
       pos = i * width;
       for (int j = 0; j < width; j++) {
           if (a[pos + j]!= 0) {
-              printf("| ");
+              printf("%c[0;34m| \e[m", 0x1b);
               if (a[pos + j] == 1) {
-                  printf("X");
+                  printf("%c[0;31mX\e[m", 0x1b);
               } else if (a[pos + j] == 2){
-                  printf("O");
+                  printf("%c[0;32mO\e[m", 0x1b);
               } else {
                   printf(" ");
               }
-              printf(" |");
+              printf("%c[0;34m |\e[m", 0x1b);
           } else {
-              printf("|   |");
+              printf("%c[0;34m|   |\e[m", 0x1b);
           }
           
           if(j == width - 1) {
-              printf("|");
+             printf("%c[0;34m|\e[m", 0x1b); 
           }
       }
       printf("\n");
@@ -265,10 +265,10 @@ int main (void) {
   if (flag == -1) {
     printf("You Chose an Invalid move\n");}
   else if (flag < 0) {
-    printf("Congrats Player 2\n");
+    printf("%c[0;34mCongrats Player 2\n", 0x1b);
   } else if (flag == 1) {
     printf("It's a Tie");
   } else if (flag > 0) {
-    printf("Congrats Player 1\n");
+    printf("%c[0;31mCongrats Player 1\n", 0x1b);
   }
 }
