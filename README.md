@@ -2,7 +2,7 @@
 
 # AstonHack2021 - CONNECT+
 
-Project: CONNECT+
+Project: Connect+
 
 Members: Abhinav Gupta, Govind Varma, Keane Moraes, Srijan Chaudhuri.
 
