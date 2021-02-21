@@ -257,6 +257,22 @@ int connect_analysis(int width, int height, int length) {
   return TIE;
 }
 
+// display_intro() prints out the introductory messages of the game
+void display_intro(){
+	printf ("%c[1;34m=================================================== ",
+	  0x1b);
+	printf ("%c[0;32mCONNECT", 0x1b);
+  	printf ("%c[0;31m+ ", 0x1b);
+  	printf ("%c[1;34m===================================================\n\n",0x1b);
+  	printf ("%c[1;33mInstructions: In the game board, Player 1's moves are represented as ", 0x1b);
+  	printf ("%c[0;31mX \e[m", 0x1b);
+  	printf ("%c[1;33mand Player 2's moves are represented as ", 0x1b);
+  	printf ("%c[0;32mO\e[m", 0x1b);
+  	printf ("%c[1;33m.\n\e[m", 0x1b);
+  	printf ("%c[1;33m              The values of the number of rows, number of columns and length must be greater than 1.\n\e[m", 0x1b);
+  	printf ("%c[1;33m              The value of length must be less than or equal to max(number of columns, number of rows).\n\n\e[m", 0x1b);
+}
+
 int main (void)
 {
   int width = 0;
@@ -264,27 +280,8 @@ int main (void)
   int length = 0;
   int cont = 1;
   int flag = 0;
-  printf
-    ("Developed by Abhinav Gupta, Govind Varma, Keane Moraes and Srijan Chaudhuri.\n\n");
-  printf ("%c[1;34m=================================================== ",
-	  0x1b);
-  printf ("%c[0;32mCONNECT", 0x1b);
-  printf ("%c[0;31m+ ", 0x1b);
-  printf ("%c[1;34m===================================================\n\n",
-	  0x1b);
-  printf
-    ("%c[1;33mInstructions: In the game board, Player 1's moves are represented as ",
-     0x1b);
-  printf ("%c[0;31mX \e[m", 0x1b);
-  printf ("%c[1;33mand Player 2's moves are represented as ", 0x1b);
-  printf ("%c[0;32mO\e[m", 0x1b);
-  printf ("%c[1;33m.\n\e[m", 0x1b);
-  printf
-    ("%c[1;33m              The values of the number of rows, number of columns and length must be greater than 2.\n\e[m",
-     0x1b);
-  printf
-    ("%c[1;33m              The value of length must be less than or equal to max(number of columns, number of rows but greater than 1).\n\n\e[m",
-     0x1b);
+  printf ("Developed by Abhinav Gupta, Govind Varma, Keane Moraes and Srijan Chaudhuri.\n\n");
+	display_intro();
   while (1)
     {
       printf ("Enter Number Of Columns: ");
@@ -294,7 +291,7 @@ int main (void)
       printf ("Enter Length: ");
       scanf ("%d", &length);
       while (length <= 1 || length > ((width >= height) ? width : height)) {
-	printf("Please enter valid length: ");
+	printf("Please enter a valid length: ");
 	scanf("%d", &length);
       }
       flag = connect_analysis (width, height, length);
@@ -318,11 +315,13 @@ int main (void)
 	  printf ("%c[0;31mCongratulations Player 1!\n\e[m", 0x1b);
 	  printf ("%c[0;31mYou won on move %d.\n\e[m", 0x1b, abs (flag));
 	}
-	printf("If you want to continue enter 0 otherwise enter 1: ");
+	printf("\nIf you wish to play again, enter 0. Otherwise, enter 1: ");
 	scanf("%d", &cont);
 	if(cont != 0) {
 	    exit(0);
 	}
+	  clear();
+	  display_intro();
     }
     
 }
