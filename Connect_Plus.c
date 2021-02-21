@@ -1,3 +1,5 @@
+// This file consists of the code for the entire Connect+ game
+
 #include <stdbool.h>
 #include <assert.h>
 #include <stdlib.h>
@@ -9,11 +11,7 @@ const int INVALID_GAME = -1;
 const int TIE = 1;
 const int MAX_BOARD_SIZE = 1024;
 /////////////////////////////////////////////////////////////////////////////
-// This module implements function to determine outcome of a connect game
 
-int my_max (int a , int b) {
-    
-}
 // clear() clears the console output and prints out two empty ines
 void clear(){
     #if defined(__linux__) || defined(__unix__) || defined(__APPLE__)
