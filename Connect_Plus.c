@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
+
 /////////////////////////////////////////////////////////////////////////////
 // DO NOT MODIFY THESE CONSTANTS
 const int INVALID_GAME = -1;
