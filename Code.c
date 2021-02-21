@@ -318,7 +318,7 @@ int main (void)
 	  printf ("%c[0;31mCongratulations Player 1!\n\e[m", 0x1b);
 	  printf ("%c[0;31mYou won on move %d.\n\e[m", 0x1b, abs (flag));
 	}
-	printf("If you wish to play again, enter 0. Otherwise, enter 1: ");
+	printf("\nIf you wish to play again, enter 0. Otherwise, enter 1: ");
 	scanf("%d", &cont);
 	if(cont != 0) {
 	    exit(0);
