@@ -182,7 +182,10 @@ bool check_diagonally(int a[], int width, int height, int col, int row, int leng
 }
 
 int connect_analysis(int width, int height, int length) {
+  assert(width > 2);
+  assert(height > 2);
   assert(width * height < MAX_BOARD_SIZE);
+  assert(length > 2);
   if (width >= height) {
     assert(length <= width);
   } else {
@@ -204,7 +207,12 @@ int connect_analysis(int width, int height, int length) {
     scanf("%d", &col);
     --col;
     if (col < 0 || col >= width) {
-      return INVALID_GAME;
+        printf("Invalid Input. Try again\n");
+        continue;
+    } 
+    if (board[col] != 0) {
+        printf("Invalid Input. Try again\n");
+        continue;
     }
     for (int i = height-1 ; 0 <= i; i--) {
       clear();
