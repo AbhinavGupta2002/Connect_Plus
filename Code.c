@@ -182,10 +182,7 @@ bool check_diagonally(int a[], int width, int height, int col, int row, int leng
 }
 
 int connect_analysis(int width, int height, int length) {
-  assert(width > 2);
-  assert(height > 2);
   assert(width * height < MAX_BOARD_SIZE);
-  assert(length > 2);
   if (width >= height) {
     assert(length <= width);
   } else {
@@ -251,40 +248,68 @@ int connect_analysis(int width, int height, int length) {
   return TIE;
 }
 
-int main (void) {
+int main (void)
+{
   int width = 0;
   int height = 0;
   int length = 0;
-  printf("Developed by Abhinav Gupta, Govind Varma, Keane Moraes and Srijan Chaudhuri.\n\n");
-  printf("%c[1;34m=================================================== ", 0x1b);
-  printf("%c[0;32mCONNECT", 0x1b);
-  printf("%c[0;31m+ ", 0x1b);
-  printf("%c[1;34m===================================================\n\n",0x1b);
-  printf("%c[1;33mInstructions: In the game board, Player 1's moves are represented as ", 0x1b);
-  printf("%c[0;31mX \e[m", 0x1b);
-  printf("%c[1;33mand Player 2's moves are represented as ", 0x1b);
-  printf("%c[0;32mO\e[m", 0x1b);
-  printf("%c[1;33m.\n\e[m", 0x1b);  
-  printf("%c[1;33m              The values of the number of rows, number of columns and length must be greater than 2.\n\e[m", 0x1b);
-  printf("%c[1;33m              The value of length must be less than or equal to max(number of columns, number of rows).\n\n\e[m", 0x1b);
-  printf("Enter Number Of Columns: ");
-  scanf("%d", &width);
-  printf("Enter Number Of Rows: ");
-  scanf("%d", &height);
-  printf("Enter Length: ");
-  scanf("%d", &length);
-  int flag = connect_analysis(width, height, length);
-  if (flag == -1) {
-    printf("You Chose an Invalid Move\n");}
-  else if (flag < 0) {
-      printf("\n");
-    printf("%c[0;32mCongratulations Player 2!\n\e[m", 0x1b);
-    printf("%c[0;32mYou won on move %d.\n\e[m", 0x1b, abs(flag));
-  } else if (flag == 1) {
-    printf("It's a Tie");
-  } else if (flag > 0) {
-      printf("\n");
-    printf("%c[0;31mCongratulations Player 1!\n\e[m", 0x1b);
-    printf("%c[0;31mYou won on move %d.\n\e[m", 0x1b, abs(flag));
-  }
+  int cont = 1;
+  int flag = 0;
+  printf
+    ("Developed by Abhinav Gupta, Govind Varma, Keane Moraes and Srijan Chaudhuri.\n\n");
+  printf ("%c[1;34m=================================================== ",
+	  0x1b);
+  printf ("%c[0;32mCONNECT", 0x1b);
+  printf ("%c[0;31m+ ", 0x1b);
+  printf ("%c[1;34m===================================================\n\n",
+	  0x1b);
+  printf
+    ("%c[1;33mInstructions: In the game board, Player 1's moves are represented as ",
+     0x1b);
+  printf ("%c[0;31mX \e[m", 0x1b);
+  printf ("%c[1;33mand Player 2's moves are represented as ", 0x1b);
+  printf ("%c[0;32mO\e[m", 0x1b);
+  printf ("%c[1;33m.\n\e[m", 0x1b);
+  printf
+    ("%c[1;33m              The values of the number of rows, number of columns and length must be greater than 2.\n\e[m",
+     0x1b);
+  printf
+    ("%c[1;33m              The value of length must be less than or equal to max(number of columns, number of rows).\n\n\e[m",
+     0x1b);
+  while (1)
+    {
+      printf ("Enter Number Of Columns: ");
+      scanf ("%d", &width);
+      printf ("Enter Number Of Rows: ");
+      scanf ("%d", &height);
+      printf ("Enter Length: ");
+      scanf ("%d", &length);
+      flag = connect_analysis (width, height, length);
+      if (flag == -1)
+	{
+	  printf ("You Chose an Invalid Move\n");
+	}
+      else if (flag < 0)
+	{
+	  printf ("\n");
+	  printf ("%c[0;32mCongratulations Player 2!\n\e[m", 0x1b);
+	  printf ("%c[0;32mYou won on move %d.\n\e[m", 0x1b, abs (flag));
+	}
+      else if (flag == 1)
+	{
+	  printf ("It's a Tie");
+	}
+      else if (flag > 0)
+	{
+	  printf ("\n");
+	  printf ("%c[0;31mCongratulations Player 1!\n\e[m", 0x1b);
+	  printf ("%c[0;31mYou won on move %d.\n\e[m", 0x1b, abs (flag));
+	}
+	printf("If you want to continue enter 0 otherwise enter 1:");
+	scanf("%d", &cont);
+	if(cont != 0) {
+	    exit(0);
+	}
+    }
+    
 }
