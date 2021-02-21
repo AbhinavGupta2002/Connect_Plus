@@ -257,6 +257,7 @@ int connect_analysis(int width, int height, int length) {
   return TIE;
 }
 
+// display_intro() prints out the introductory messages of the game
 void display_intro(){
 	printf ("%c[1;34m=================================================== ",
 	  0x1b);
