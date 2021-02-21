@@ -2,7 +2,7 @@
 
 # AstonHack2021 - Connect+
 
-Connect+ the digital version of the classic physical board game, Connec4, but reimagined with additonal unique features.
+Connect+ is the digital version of the classic physical board game, Connec4, but reimagined with additonal unique features.
 
 Members: Abhinav Gupta, Govind Varma, Keane Moraes, Srijan Chaudhuri.
 
