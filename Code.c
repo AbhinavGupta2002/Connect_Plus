@@ -2,6 +2,7 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 /////////////////////////////////////////////////////////////////////////////
 // DO NOT MODIFY THESE CONSTANTS
 const int INVALID_GAME = -1;
@@ -10,6 +11,9 @@ const int MAX_BOARD_SIZE = 1024;
 /////////////////////////////////////////////////////////////////////////////
 // This module implements function to determine outcome of a connect game
 
+int my_max (int a , int b) {
+    
+}
 // clear() clears the console output and prints out two empty ines
 void clear(){
     #if defined(__linux__) || defined(__unix__) || defined(__APPLE__)
@@ -182,10 +186,7 @@ bool check_diagonally(int a[], int width, int height, int col, int row, int leng
 }
 
 int connect_analysis(int width, int height, int length) {
-  assert(width > 2);
-  assert(height > 2);
   assert(width * height < MAX_BOARD_SIZE);
-  assert(length > 2);
   if (width >= height) {
     assert(length <= width);
   } else {
@@ -282,7 +283,7 @@ int main (void)
     ("%c[1;33m              The values of the number of rows, number of columns and length must be greater than 2.\n\e[m",
      0x1b);
   printf
-    ("%c[1;33m              The value of length must be less than or equal to max(number of columns, number of rows).\n\n\e[m",
+    ("%c[1;33m              The value of length must be less than or equal to max(number of columns, number of rows but greater than 1).\n\n\e[m",
      0x1b);
   while (1)
     {
@@ -292,6 +293,10 @@ int main (void)
       scanf ("%d", &height);
       printf ("Enter Length: ");
       scanf ("%d", &length);
+      while (length <= 1 || length > ((width >= height) ? width : height)) {
+	printf("Please enter valid length: ");
+	scanf("%d", &length);
+      }
       flag = connect_analysis (width, height, length);
       if (flag == -1)
 	{
@@ -313,7 +318,7 @@ int main (void)
 	  printf ("%c[0;31mCongratulations Player 1!\n\e[m", 0x1b);
 	  printf ("%c[0;31mYou won on move %d.\n\e[m", 0x1b, abs (flag));
 	}
-	printf("If you want to continue enter 0 otherwise enter 1:");
+	printf("If you want to continue enter 0 otherwise enter 1: ");
 	scanf("%d", &cont);
 	if(cont != 0) {
 	    exit(0);
