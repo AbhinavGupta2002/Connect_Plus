@@ -323,6 +323,7 @@ int main (void)
 	if(cont != 0) {
 	    exit(0);
 	}
+	  clear();
     }
     
 }
