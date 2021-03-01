@@ -6,7 +6,7 @@ Connect+ is a digital version of the classic physical board game, Connect4, but 
 
 NOTE: The project was built from sratch. No open source code was used.
 
-Project has been submitted here: https://devpost.com/software/connectx-9sw36e
+Project has been submitted to the AstonHack 6 Hackathon here: https://devpost.com/software/connectx-9sw36e
 
 Members: Abhinav Gupta, Govind Varma, Keane Moraes, Srijan Chaudhuri.
 
