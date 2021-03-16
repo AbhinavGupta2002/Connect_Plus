@@ -1,6 +1,6 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/AbhinavGupta2002/AstonHack2021/main/LICENSE)
-
 # AstonHack2021 - Connect+
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/AbhinavGupta2002/AstonHack2021/main/LICENSE)
 
 Connect+ is a digital version of the classic physical board game, Connect4, but reimagined with additional unique features that make the game more enjoyable.
 
