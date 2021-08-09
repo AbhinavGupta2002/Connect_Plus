@@ -1,4 +1,4 @@
-# AstonHack2021 - Connect+
+# Connect+ (AstonHack2021)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/AbhinavGupta2002/AstonHack2021/main/LICENSE)
 
